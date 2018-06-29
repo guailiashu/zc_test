@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('static_pages/home');
+//});
+
+Route::get('/', 'StaticPagesController@home')->name('home');//首页
+Route::get('/help', 'StaticPagesController@help')->name('help');//关于页
+Route::get('/about', 'StaticPagesController@about')->name('about');//帮助页
+
+Route::get('signup','UsersController@signup')->name('signup');//登陆页
