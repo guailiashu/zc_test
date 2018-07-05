@@ -20,3 +20,13 @@ Route::get('/help', 'StaticPagesController@help')->name('help');//关于页
 Route::get('/about', 'StaticPagesController@about')->name('about');//帮助页
 
 Route::get('signup','UsersController@signup')->name('signup');//登陆页
+
+
+Route::resource('users', 'UsersController');//RESTful 风格，户控制器
+//Route::get('/users', 'UsersController@index')->name('users.index');
+//Route::get('/users/{user}', 'UsersController@show')->name('users.show');
+//Route::get('/users/create', 'UsersController@create')->name('users.create');
+//Route::post('/users', 'UsersController@store')->name('users.store');
+//Route::get('/users/{user}/edit', 'UsersController@edit')->name('users.edit');
+//Route::patch('/users/{user}', 'UsersController@update')->name('users.update');
+//Route::delete('/users/{user}', 'UsersController@destroy')->name('users.destroy');
