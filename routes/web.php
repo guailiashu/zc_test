@@ -21,8 +21,7 @@ Route::get('/about', 'StaticPagesController@about')->name('about');//帮助页
 
 Route::get('signup','UsersController@signup')->name('signup');//登陆页
 
-
-Route::resource('users', 'UsersController');//RESTful 风格，户控制器
+Route::resource('users', 'UsersController');//RESTful 风格，用户控制器
 //Route::get('/users', 'UsersController@index')->name('users.index');
 //Route::get('/users/{user}', 'UsersController@show')->name('users.show');
 //Route::get('/users/create', 'UsersController@create')->name('users.create');
@@ -30,3 +29,8 @@ Route::resource('users', 'UsersController');//RESTful 风格，户控制器
 //Route::get('/users/{user}/edit', 'UsersController@edit')->name('users.edit');
 //Route::patch('/users/{user}', 'UsersController@update')->name('users.update');
 //Route::delete('/users/{user}', 'UsersController@destroy')->name('users.destroy');
+
+Route::get('login','SessionsController@create')->name('login');//显示登录页面
+Route::post('login','SessionsController@store')->name('login');//创建新会话（登录）
+Route::delete('logout','SessionsController@destroy')->name('logout');//销毁会话（退出登录）
+
